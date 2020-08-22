@@ -1,0 +1,31 @@
+/* pages/navbar/navbar.wxss */
+.section{
+  width: 100%;
+}
+/* 搜索框 */
+.searchbar{
+  display: flex;
+  justify-content: center;
+  height: 100rpx;
+  background-color: tomato;
+}
+.searchbar .searchbar-box{
+  width: 95%;
+  display: inline-block;
+  background-color: white;
+  border-radius: 40rpx;
+  height: 60rpx;
+  margin-top: 23rpx;
+}
+.search-plac{
+  text-align: center;
+  font-size: 11pt;
+  margin-top: 4rpx;
+}
+.searchbar-box .search-icon{
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  top: 32rpx;
+  left: 267rpx;
+}

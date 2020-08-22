@@ -1,0 +1,14 @@
+<!--pages/search/search.wxml-->
+<view class="container">
+  	<!-- 搜索框 -->
+	<view class="section searchbar">
+		<view class="section searchbar-box">
+			<image src="../../image/search.png" class="search-icon"></image>
+			<input type="text" name="searchbar" placeholder="搜索商品" class="search-plac" />
+    </view>
+    <view class="search-cancle" catchtap="canclesearch">
+      取消
+    </view>
+	</view>
+
+</view>

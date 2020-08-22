@@ -1,0 +1,8 @@
+<!--components/searchBox.wxml-->
+	<!-- 搜索框 -->
+	<view class="section searchbar" catchtap="opensearch" style="padding-top:{{statusBarHeight}}px ; height:{{navHeight+statusBarHeight}}px">
+		<view class="section searchbar-box" >
+			<image src="../image/search.png" class="search-icon"></image>
+			<input type="text" name="searchbar" disabled="true" placeholder="点击搜索" class="search-plac" />
+		</view>
+	</view>

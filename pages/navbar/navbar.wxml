@@ -1,0 +1,9 @@
+<!--pages/navbar/navbar.wxml-->
+<view class="container">
+	<view class="section searchbar">
+		<view class="section searchbar-box">
+			<image src="../../image/search.png" class="search-icon"></image>
+			<input type="text" name="searchbar" disabled="true" placeholder="搜索商品" placeholder-class="search-plac"/>
+		</view>
+	</view>
+</view>  

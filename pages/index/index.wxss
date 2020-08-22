@@ -1,0 +1,140 @@
+/**index.wxss**/
+.section {
+  width: 100%;
+}
+.container{
+  z-index: 0;
+}
+
+
+/* 轮播图 */
+.section-swiper .slide {
+  width: 100%;
+  height: 380rpx;
+}
+
+.section-swiper .slide-image {
+  width: 100%;
+  display: inline-block;
+}
+
+/* 三个保证 */
+.section-promise {
+  width: 100%;
+  height: 55rpx;
+}
+
+.section .promise-box {
+  width: 90%;
+  height: 50rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-promise .promise-list {
+  width: 25%;
+  height: 50rpx;
+  display: flex;
+}
+
+.promise-item .promise-img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.promise-item .promise-text {
+  font-size: 8pt;
+  color: rgb(111, 110, 114);
+}
+
+/* 商品品类 */
+.section .section-icons {
+  width: 100%;
+}
+
+.section-icons .icons {
+  width: 90%;
+  height: 350rpx;
+  margin: auto;
+}
+
+.icons .icons-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.icons-item .icons-img {
+  margin: 0 auto;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.icons-item .icons-text {
+  color: #000;
+  font-size: 27rpx;
+  line-height: 2;
+}
+
+/* 修改轮播图下面的点的样式 */
+.icons .wx-swiper-dots.wx-swiper-dots-horizontal {
+  margin-bottom: 0;
+}
+
+.icons .wx-swiper-dot {
+  width: 40rpx;
+  display: inline-flex;
+  height: 10rpx;
+  margin-left: 10rpx;
+  justify-content: space-between;
+}
+
+.icons .wx-swiper-dot::before {
+  content: '';
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8rpx
+}
+
+.icons .wx-swiper-dot-active::before {
+  background: rgba(244, 0, 0, 0.8);
+}
+
+
+/* 导航下的商品 */
+.nav-box{
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav-products{
+  width: 50%;
+}
+.nav-product{
+  width: 95%;
+  height: 95%;
+  background-color: white;
+  margin: 5% 3%;
+}
+.product-img image{
+  height: 350rpx;
+  width: 350rpx;
+  margin: auto;
+}
+.product-s{
+  width: 80%;
+  margin: auto;
+}
+
+.product-price{
+  font-size: 30rpx;
+  color: #f43838;
+}
+.product-title{
+  font-size: 25rpx;
+  color: #999;
+}

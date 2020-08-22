@@ -1,0 +1,38 @@
+/* components/searchBox.wxss */
+/* 搜索框 */
+.searchbar {
+  background-color: tomato;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+
+}
+
+.searchbar-box {
+  width: 50%;
+  display: inline-block;
+  background-color: white;
+  border-radius: 40rpx;
+  height: 60%;
+  position: relative;
+    top: 20rpx;
+    left: 10rpx;
+}
+
+.search-plac {
+  font-size: 25rpx;
+    width: 50%;
+    position: absolute;
+    top: 5rpx;
+    height: 90%;
+    left: 54rpx;
+}
+
+.searchbar-box .search-icon {
+  position: relative;
+    width: 40rpx;
+    height: 40rpx;
+    top: 8rpx;
+    left: 10rpx;
+}

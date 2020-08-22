@@ -1,0 +1,180 @@
+/* pages/product/product.wxss */
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.float {
+  float: left;
+}
+
+.flex {
+  display: flex;
+}
+
+.section {
+  width: 100%;
+}
+
+.product-i {
+  background-color: white;
+}
+
+.product-info {
+  width: 95%;
+  margin: auto;
+}
+
+.p-price {
+  font-size: 44rpx;
+  color: crimson;
+}
+
+.p-name {
+  font-size: 30rpx;
+}
+
+.p-specialty {
+  font-size: 22rpx;
+  color: darkgray;
+
+}
+
+.p-num {
+  float: left;
+  border-radius: 50%;
+  width: 25rpx;
+  height: 25rpx;
+  border-style: solid;
+  border-width: 1rpx;
+  line-height: 25rpx;
+  text-align: center;
+  margin: 3rpx 10rpx 0 0;
+}
+
+/*  */
+.product-s {
+  background-color: white;
+  margin-top: 20rpx;
+}
+
+.product-select {
+  position: relative;
+  width: 95%;
+  margin: auto;
+}
+
+.select-box{
+  border-bottom: solid;
+  border-width: 1rpx;
+  border-color: #e0dddd;
+  height: 70rpx;
+}
+.p-select{
+  line-height: 70rpx;
+}
+
+.promise-item{
+  width: 30%;
+  font-size: 25rpx;
+}
+
+/*  */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 99;
+  color: #fff;
+
+}
+
+.product-model {
+  width: 100%;
+  height: 75%;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  border-radius: 3% 3% 0 0;
+}
+
+.model-cancle {
+  width: 100%;
+  height: 5%;
+}
+
+.cuIcon-roundclose {
+  float: right;
+  margin-right: 10rpx;
+}
+
+.model-box {
+  width: 95%;
+  margin: auto;
+  height: 85%;
+}
+
+.box-img {
+  width: 180rpx;
+  height: 180rpx;
+  background-color: rgb(110, 47, 47);
+  position: absolute;
+  left: 15%;
+}
+
+.box-w {
+  width: 40%;
+  position: absolute;
+  left: 50%;
+}
+
+.box-price {
+  top: 7%;
+  color: crimson;
+}
+
+.box-name {
+  top: 12%;
+}
+
+
+.pro-num {
+  width: 100%;
+  height: 50rpx;
+}
+
+.num-l {
+  width: 40%;
+  color: #9c26b0;
+  font-size: 28rpx;
+}
+
+.num-r {
+  width: 50%;
+  float: right;
+  position: relative;
+  left: 200rpx;
+}
+
+.num-input {
+  width: 25%;
+  text-align: center;
+  border-radius: 10rpx;
+  margin: 0 20rpx 0 ;
+}
+
+.num-change {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 7rpx;
+}
+.model-btn{
+  width: 80%;
+  margin: auto;
+}

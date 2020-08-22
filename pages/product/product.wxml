@@ -1,0 +1,103 @@
+<!--pages/product/product.wxml-->
+<view class="container">
+  <!-- 商品图片轮播图 -->
+  <view class="section pruduct-t">
+    <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
+      autoplay="true" interval="5000" duration="500">
+      <swiper-item wx:for="{{swiperList}}" wx:key>
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+        <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
+          wx:if="{{item.type=='video'}}"></video>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 详细信息 -->
+  <view class="section product-i">
+    <view class="product-info">
+      <view class="p-price">￥{{price}}</view>
+      <view class="p-name">{{name}}</view>
+      <view class="p-specialty" wx:for="{{specialty}}" wx:for-item="item">
+        <view class="p-item ">
+          <view class="p-num"> {{index+1}} </view>
+          <view class="p-words"> {{item}} </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="section product-s">
+    <view class=" product-select">
+
+      <view class="select-box">
+        <view class="p-select flex" catchtap="showModel">
+          <view class="select-name" style="width:10%">已选</view>
+          <view class="selected-info" style="width:70% ; margin-left:10%">已选择xxx</view>
+          <text class="cuIcon-right  text-gray " style="width:5%;margin-left: 5%"></text>
+        </view>
+      </view>
+      <view class="select-box">
+        <view class="p-select flex">
+          <view class="select-name" style="width:10%">送至</view>
+          <view class="selected-info" style="width:70% ; margin-left:10%">已选择xxx</view>
+          <text class="cuIcon-right  text-gray " style="width:5%;margin-left: 5%"></text>
+        </view>
+      </view>
+
+      <view class="p-promise flex">
+        <view class="promise-item">
+          <text class="cuIcon-roundcheck lg text-gray">自营</text>
+        </view>
+        <view class="promise-item">
+          <text class="cuIcon-roundcheck lg text-gray">安全</text>
+        </view>
+        <view class="promise-item">
+          <text class="cuIcon-roundcheck lg text-gray">飞快</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <!-- 商品图片展示 -->
+  <view class="section product-f">
+  </view>
+  <!-- 其他商品推荐 -->
+  <view class="section recommend">
+  </view>
+</view>
+
+<!-- 遮罩 -->
+<view class="mask" wx:if="{{isShow}}" bindtap='close' catchtouchmove='maskTouchMove'></view>
+<!-- 弹出框 -->
+<view class="product-model" animation="{{animation}}" wx:if="{{isShow}}" catchtouchmove='touchMove'>
+  <view class="model-cancle" bindtap='close'>
+    <text class="cuIcon-roundclose text-gray"></text>
+  </view>
+  <view class="model-box">
+    <view class="pro-info" style="height:25%">
+      <view class="box-img">
+        <image src=""></image>
+      </view>
+      <view class="box-price box-w">
+        ￥999
+      </view>
+      <view class="box-name box-w">
+        商品名
+      </view>
+    </view>
+    <view class="pro-sel">
+      商品选项
+    </view>
+    <view class="pro-num flex">
+      <view class="num-l">商品数量</view>
+      <view class="num-r flex">
+        <image class="num-change" src="../../image/minus__blod.png" catchtap='minus'></image>
+        <input type="text" class="num-input bg-gradual-orange" value="{{num}}"></input>
+        <image class="num-change" src="../../image/plus__blod.png" catchtap='plus'></image>
+      </view>
+    </view>
+
+  </view>
+  <view class="model-btn">
+    <button class="cu-btn round line-orange " style="width:100%">确定</button>
+  </view>
+</view>

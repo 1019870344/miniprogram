@@ -1,0 +1,42 @@
+/* pages/search/search.wxss */
+.section {
+  width: 100%;
+}
+
+/* 搜索框 */
+.searchbar {
+  display: flex;
+  justify-content: center;
+  height: 100rpx;
+  background-color: antiquewhite;
+}
+
+.searchbar .searchbar-box {
+  width: 80%;
+  display: inline-block;
+  background-color: white;
+  border-radius: 30rpx;
+  height: 60rpx;
+  margin-top: 23rpx;
+}
+
+.search-plac {
+  font-size: 25rpx;
+  position: relative;
+  left: 50rpx;
+  top: 5rpx;
+  width: 90%;
+  height: 90%;
+}
+.searchbar-box .search-icon {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  top: 32rpx;
+  left: 60rpx;
+}
+.search-cancle{
+  position: relative;
+  top: 25rpx;
+  left: 20rpx;
+}

@@ -1,0 +1,34 @@
+<!--pages/mine/mine.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="w">
+      <view wx:if="{{!hasUserInfo}}" >
+        <view class="user-info">
+          <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="getinfobtn" style="width:100% ;position:relative; left: -20rpx;">
+            <view class="user-img">
+              <image src="{{userInfo.userimg}}" style="width:120rpx ;height:120rpx ; border-radius:50%" ></image>
+            </view>
+            <view class="user-name">{{userInfo.username}}</view>
+          </button>
+        </view>
+        
+      </view>
+      <view wx:else>
+        <view class="user-info" >
+          <button class="getinfobtn" style="width:100%">
+            <view class="user-img">
+              <image src="{{userInfo.avatarUrl}}" style="width:120rpx ;height:120rpx ; border-radius:50%" ></image>
+            </view>
+            <view class="user-name">{{userInfo.nickName}}</view>
+          </button>
+        
+      </view>
+      </view>
+      
+    </view>
+  </view>
+  <view>
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+  </view>
+  
+</view>

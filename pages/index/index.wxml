@@ -1,0 +1,136 @@
+<!--index.wxml-->
+<view>
+	<searchBox inner-text="Some text"></searchBox>
+</view>
+
+<view class="container" style="padding-top:{{navHeight+statusBarHeight}}px">
+	<!-- 轮播图 -->
+	<view class="section section-swiper">
+		<swiper class="slide" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}"
+			duration="{{duration}}">
+			<block wx:for="{{index_slides}}" wx:key="index">
+				<swiper-item>
+					<image src="{{item.slide_url}}" mode="widthFix" class="slide-image" data-id="{{item.id}}" />
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+
+	<!-- 三个保证 -->
+	<view class="section section-promise">
+		<view class="section promise-box">
+			<view class="section promise-list" wx:for="{{promiseData}}" wx:key="index">
+				<view class="promise-item">
+					<image src="{{item.promisImg}}" class="promise-img" />
+					<text class="promise-text">{{item.promiseTitle}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 品类 -->
+	<view class="section section-icons">
+		<swiper class="icons" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}"
+			duration="{{duration}}">
+			<swiper-item wx:for="{{icons}}" wx:for-item="item" wx:key="id">
+				<block wx:for="{{item}}" wx:key="index">
+					<view class="icons-item" bindtap="iconsInfo" data-id="{{item.id}}" data-url="{{item.url}}">
+						<image src="{{item.iconsImg}}" class="icons-img" />
+						<text class="icons-text">{{item.iconsTitle}}</text>
+					</view>
+				</block>
+			</swiper-item>
+		</swiper>
+	</view>
+
+	<!-- 横向导航栏 -->
+	<view class="section">
+		<!-- 导航栏 -->
+		<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+			<view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{navbarTitle}}" wx:key bindtap="tabSelect"
+				data-id="{{index}}">
+				<text class="item-nav">{{item}}</text>
+			</view>
+		</scroll-view>
+
+		<view class="movie-content-wrapper">
+			<view class="nav-box" wx:if="{{TabCur==0}}">
+				<view class="nav-products" wx:for="{{products}}" wx:key="index" wx:for-item="item">
+					<view class="nav-product" catchtap="navigateTo">
+						<view class="product-img">
+							<image src="{{item.url}}"></image>
+						</view>
+						<view class="product-name product-s">{{item.name}}1</view>
+						<view class="product-price product-s">{{item.price}}1</view>
+						<view class="product-title product-s">{{item.title}}1</view>
+					</view>
+				</view>
+			</view>
+			<view class="nav-box" wx:if="{{TabCur==1}}">
+				<view class="nav-products" wx:for="{{products}}" wx:key="index" wx:for-item="item">
+					<view class="nav-product">
+						<view class="product-img">
+							<image src="{{item.url}}"></image>
+						</view>
+						<view class="product-name product-s">{{item.name}}2</view>
+						<view class="product-price product-s">{{item.price}}2</view>
+						<view class="product-title product-s">{{item.title}}</view>
+					</view>
+				</view>
+			</view>
+			<view class="nav-box" wx:if="{{TabCur==2}}">
+				<view class="nav-products" wx:for="{{products}}" wx:key="index" wx:for-item="item">
+					<view class="nav-product">
+						<view class="product-img">
+							<image src="{{item.url}}"></image>
+						</view>
+						<view class="product-name product-s">{{item.name}}3</view>
+						<view class="product-price product-s">{{item.price}}3</view>
+						<view class="product-title product-s">{{item.title}}3</view>
+					</view>
+				</view>
+			</view>
+			<view class="nav-box" wx:if="{{TabCur==3}}">
+				<view class="nav-products" wx:for="{{products}}" wx:key="index" wx:for-item="item">
+					<view class="nav-product">
+						<view class="product-img">
+							<image src="{{item.url}}"></image>
+						</view>
+						<view class="product-name product-s">{{item.name}}4</view>
+						<view class="product-price product-s">{{item.price}}4</view>
+						<view class="product-title product-s">{{item.title}}4</view>
+					</view>
+				</view>
+			</view>
+			<view class="nav-box" wx:if="{{TabCur==4}}">
+				<view class="nav-products" wx:for="{{products}}" wx:key="index" wx:for-item="item">
+					<view class="nav-product">
+						<view class="product-img">
+							<image src="{{item.url}}"></image>
+						</view>
+						<view class="product-name product-s">{{item.name}}5</view>
+						<view class="product-price product-s">{{item.price}}5</view>
+						<view class="product-title product-s">{{item.title}}5</view>
+					</view>
+				</view>
+			</view>
+			<view class="nav-box" wx:if="{{TabCur==5}}">
+				<view class="nav-products" wx:for="{{products}}" wx:key="index" wx:for-item="item">
+					<view class="nav-product">
+						<view class="product-img">
+							<image src="{{item.url}}"></image>
+						</view>
+						<view class="product-name product-s">{{item.name}}6</view>
+						<view class="product-price product-s">{{item.price}}6</view>
+						<view class="product-title product-s">{{item.title}}6</view>
+					</view>
+				</view>
+			</view>
+
+		</view>
+
+	</view>
+
+
+
+</view>
