@@ -24,9 +24,9 @@
       </view>
     </view>
   </view>
+  <!-- 选择商品和地点 -->
   <view class="section product-s">
     <view class=" product-select">
-
       <view class="select-box">
         <view class="p-select flex" catchtap="showModel">
           <view class="select-name" style="width:10%">已选</view>
@@ -41,7 +41,6 @@
           <text class="cuIcon-right  text-gray " style="width:5%;margin-left: 5%"></text>
         </view>
       </view>
-
       <view class="p-promise flex">
         <view class="promise-item">
           <text class="cuIcon-roundcheck lg text-gray">自营</text>
@@ -53,7 +52,21 @@
           <text class="cuIcon-roundcheck lg text-gray">飞快</text>
         </view>
       </view>
-
+    </view>
+  </view>
+  <!-- 评论 -->
+  <view class="section product-s">
+    <view class=" product-select">
+      <view class="select-box">
+        <view class="p-select flex" catchtap="showModel">
+          <view class="select-name" style="width:30%">用户评价</view>
+          <view class="selected-info" style="width:50% ; margin-left:10%;text-align:right">(999)</view>
+          <text class="cuIcon-right  text-gray " style="width:5%;margin-left: 5%"></text>
+        </view>
+      </view>
+      <view class="select-box">
+        
+      </view>
     </view>
   </view>
 

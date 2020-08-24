@@ -8,7 +8,8 @@
     "pages/logs/logs",
     "pages/mine/mine",
     "pages/search/search",
-    "pages/product/product"
+    "pages/product/product",
+    "pages/remarks/remarks"
   
   ],
   "window": {
