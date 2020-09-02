@@ -4,5 +4,10 @@
 		<view class="section searchbar-box" >
 			<image src="../image/search.png" class="search-icon"></image>
 			<input type="text" name="searchbar" disabled="true" placeholder="点击搜索" class="search-plac" />
+			<text class="cuIcon-scan lg text-gray scan-icon" catchtap="scan"></text>
 		</view>
+	
+			
+	
+
 	</view>

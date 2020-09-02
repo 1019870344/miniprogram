@@ -47,7 +47,7 @@
 	<view class="section">
 		<!-- 导航栏 -->
 		<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
-			<view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{navbarTitle}}" wx:key bindtap="tabSelect"
+			<view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{navbarTitle}}" wx:key="index" bindtap="tabSelect"
 				data-id="{{index}}">
 				<text class="item-nav">{{item}}</text>
 			</view>

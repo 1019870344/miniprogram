@@ -1,6 +1,23 @@
 //app.js
+import http from '/utils/request.js'
 App({
+  http,
+  globalData: {
+    userimg:"/image/user-img.png",
+    username:"用户名",
+    hasUserInfo:false,
+    userInfo: null,
+    url: 'http://localhost:8080',
+    navHeight: '',
+    navTop: '',
+    windowHeight: '',
+    statusBarHeight: '',
+    menuButtonHeight: '',
+    menuButtonTop: ''
+  },
+
   onLaunch: function () {
+    const that = this
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -9,23 +26,30 @@ App({
     // 登录
     wx.login({
       success: res => {
-        wx.request({
-          url: this.globalData.url + '/wxlogin/getcode',
-          data: {
-            code: res.code
-          },
-          method: "POST",
-          header: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
-          },
-          success: res1 => {
-            console.log(res1)
-            this.globalData.openId = res1.data.openid,
-              this.globalData.session_key = res1.data.session_key
-            console.log(this.globalData.openId)
-            console.log(this.globalData.session_key)
-          }
+        console.log('登录')
+        var data = {
+          code: res.code
+        }
+        that.http.get('/wxlogin/getcode', data).then(res => {
+          console.log('获取openId和session_key')
+          wx.setStorageSync('openId', res.openId)
+          wx.setStorageSync('sessionKey', res.sessionKey)
         })
+
+        var data1= {
+          openId:wx.getStorageSync('openId')
+        }
+        that.http.get('/userInfo/getUserInfo',data1).then(res1=>{
+
+          if(res1!= null){
+            that.globalData.userimg = res1.avatarUrl
+            that.globalData.username = res1.nickName
+            that.globalData.hasUserInfo = true
+          }
+          
+        })
+
+
       }
     })
     // 获取用户信息
@@ -52,28 +76,16 @@ App({
     let menuButtonObject = wx.getMenuButtonBoundingClientRect();
     // 获取设备信息
     var systemInfo = wx.getSystemInfoSync()
-    console.log(systemInfo)
+    // console.log(systemInfo)
     let statusBarHeight = systemInfo.statusBarHeight,
       navTop = menuButtonObject.top, //胶囊按钮与顶部的距离
-      navHeight =  menuButtonObject.height + (menuButtonObject.top - statusBarHeight) * 2; //导航高度
+      navHeight = menuButtonObject.height + (menuButtonObject.top - statusBarHeight) * 2; //导航高度
     this.globalData.navHeight = navHeight;
     this.globalData.navTop = navTop;
     this.globalData.windowHeight = systemInfo.windowHeight;
     this.globalData.statusBarHeight = statusBarHeight;
     this.globalData.menuButtonHeight = menuButtonObject.height
     this.globalData.menuButtonTop = menuButtonObject.top
-    console.log(this.globalData)
-  },
-  globalData: {
-    userInfo: null,
-    url: 'http://localhost:8082',
-    openId: '',
-    session_key: '',
-    navHeight: '',
-    navTop: '',
-    windowHeight: '',
-    statusBarHeight: '',
-    menuButtonHeight:'',
-    menuButtonTop:''
+    // console.log(this.globalData)
   }
 })

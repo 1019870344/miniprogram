@@ -1,35 +1,24 @@
 // pages/mine/mine.js
 const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:{
-      userimg:"/image/user-img.png",
-      username:"点击获取头像和用户名"
-    },
-    hasUserInfo: false,
-    session_key:""
+      userimg: app.globalData.userimg,
+      username: app.globalData.username,
+      hasUserInfo: app.globalData.hasUserInfo
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("用户信息："+app.globalData.userInfo);
-      if(app.globalData.userInfo){
-      console.log("已登录");
-      this.setData({
-        userInfo : app.globalData.userInfo,
-        hasUserInfo:true
-      })
-      }else{
-      console.log("未登录")
-      }
-
-      
+    this.setData({
+      userimg:app.globalData.userimg,
+      username:app.globalData.nickName,
+      hasUserInfo:app.globalData.hasUserInfo
+    })
   },
 
   getUserInfo:function(){
@@ -43,60 +32,32 @@ Page({
           wx.getUserInfo({
             success: ures2 => {
               // 可以将 ures2 发送给后台解码出 unionId   
-              console.log("获取到的用户数据：");
-              console.log(ures2);
-              JSON.stringify(ures2)
+              console.log("获取用户数据：");
+              console.log(ures2.userInfo);
+              wx.setStorageSync('userInfo', ures2.userInfo)
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(ures2)
               }
-              // 解密
-              wx.request({
-                url: app.globalData.url+'/wxlogin/getid',
-                data: {
-                  session_key:app.globalData.session_key,
-                  encryptedData: ures2.encryptedData,
-                  iv: ures2.iv
-                },
-                success: res_allinfo=> {
-                  console.log("解密后的数据：");
-                  console.log(res_allinfo.data.userInfo);
-                  this.data.session_key = res_allinfo.data.userInfo.session_key;
-                  app.globalData.userInfo = res_allinfo.data.userInfo;
-                  // 解密后的数据插入数据库
-                  wx.request({
-                    url:  app.globalData.url+'/wxlogin/useinfo',
-                    data:{
-                      openId:res_allinfo.data.userInfo.openId,
-                      sessionKey:res_allinfo.data.userInfo.session_key,
-                      nickName:res_allinfo.data.userInfo.nickName,
-                      gender:res_allinfo.data.userInfo.gender,
-                      avatarUrl:res_allinfo.data.userInfo.avatarUrl
-                    },
-                    method:'post',
-                    header: {
-                      'content-type': 'application/x-www-form-urlencoded' // 默认值
-                    },
-                    success:function(res_userinfo){
-                      console.log("插入成功");
-                    }
-                  })
-                  
-                  if(app.globalData.userInfo){
-                    console.log("已登录");
-                    that.setData({
-                      userInfo : app.globalData.userInfo,
-                      hasUserInfo:true
-                    })
-                  }
-
-                },
-                fail: function (error) {
-                  console.log(error);
-                  console.log("解密失败");
-                }
+              // 数据插入数据库
+              var data = {
+                openId: wx.getStorageSync('openId'),
+                avatarUrl: ures2.userInfo.avatarUrl,
+                nickName: ures2.userInfo.nickName,
+                country: ures2.userInfo.country,
+                province: ures2.userInfo.province,
+                city: ures2.userInfo.city
+              }
+              app.http.post('/userInfo/selectByOpenId',data).then(res=>{
+                console.log(res)
+                app.globalData.userInfo =ures2.userInfo
+                that.setData({
+                  userimg:ures2.userInfo.avatarUrl,
+                  username:ures2.userInfo.nickName
+                })
               })
+              
               
             }
           })               
@@ -110,26 +71,18 @@ Page({
 
   getPhoneNumber: function (e) {
     var that = this;
-    console.log(e.detail.errMsg == "getPhoneNumber:ok");
-    console.log(e.detail.encryptedData);
-    console.log(e.detail.iv);
-    console.log(app.globalData.session_key);
     if (e.detail.errMsg == "getPhoneNumber:ok") {
-      wx.request({
-        url: app.globalData.url+'/wxlogin/getphone',
-        data: {
-          encryptedData: e.detail.encryptedData,
-          iv: e.detail.iv,
-          sessionKey: app.globalData.session_key,
-        },
-        method:'post',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded' // 默认值
-        },
-        success: function (res) {
-          console.log(res);
-        }
+      var data = {
+        encryptedData: e.detail.encryptedData,
+        iv: e.detail.iv,
+        sessionKey: wx.getStorageSync('sessionKey')
+      }
+      app.http.get('/wxlogin/getphone',data).then(res=>{
+        console.log('获取电话号码： '+res.phoneNumber);
+        wx.setStorageSync('tel', res.phoneNumber)
+
       })
+    
     }
   },
 

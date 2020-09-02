@@ -33,5 +33,22 @@ Component({
         url: '../search/search',
       })
     },
+    scan:function(){
+      wx.scanCode({
+        onlyFromCamera: true,
+        success:res=>{
+          console.log('扫码成功'),
+          console.log(res),
+          wx.navigateTo({
+            url: '../scan/scan?qrcode='+res.result,
+          })
+        },
+        fail:err=>{
+          console.log('扫码失败'),
+          console.log(err)
+        }
+
+      })
+    }
   }
 })

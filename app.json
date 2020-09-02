@@ -9,7 +9,10 @@
     "pages/mine/mine",
     "pages/search/search",
     "pages/product/product",
-    "pages/remarks/remarks"
+    "pages/remarks/remarks",
+    "pages/scan/scan",
+
+    "pages/address/address"
   
   ],
   "window": {

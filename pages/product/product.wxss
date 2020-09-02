@@ -52,7 +52,7 @@
   margin: 3rpx 10rpx 0 0;
 }
 
-/*  */
+/*评论  */
 .product-s {
   background-color: white;
   margin-top: 20rpx;
@@ -64,22 +64,27 @@
   margin: auto;
 }
 
-.select-box{
+.select-box {
   border-bottom: solid;
   border-width: 1rpx;
   border-color: #e0dddd;
   height: 70rpx;
 }
-.p-select{
+
+.p-select {
   line-height: 70rpx;
 }
 
-.promise-item{
+.promise-item {
   width: 30%;
   font-size: 25rpx;
 }
 
-/*  */
+/* 商品图片展示 */
+.product-f{
+  padding-top: 20rpx;
+}
+/* 弹出框 */
 .mask {
   width: 100%;
   height: 100%;
@@ -125,7 +130,7 @@
   height: 180rpx;
   background-color: rgb(110, 47, 47);
   position: absolute;
-  left: 15%;
+  left: 10%;
 }
 
 .box-w {
@@ -144,11 +149,40 @@
 }
 
 
+
+
+/* 商品选项 */
+.pro-sel{
+  margin-top: 30rpx;
+}
+.sel-items {
+  
+}
+.sel-itembox{
+  width: 25%;
+  float: left;
+  margin-top: 10rpx;
+}
+  
+.sel-item {
+  min-width: 100rpx;
+  border-width: 1rpx;
+  border-style: solid;
+  border-radius: 25rpx;
+  text-align: center;
+  max-width: 150rpx;
+  border-color: orange;
+}
+.sel-active{
+  background-color: orange;
+  color: white;
+}
+/* 数量 */
 .pro-num {
   width: 100%;
   height: 50rpx;
-}
-
+  padding-top: 50rpx;
+} 
 .num-l {
   width: 40%;
   color: #9c26b0;
@@ -166,7 +200,7 @@
   width: 25%;
   text-align: center;
   border-radius: 10rpx;
-  margin: 0 20rpx 0 ;
+  margin: 0 20rpx 0;
 }
 
 .num-change {
@@ -174,7 +208,8 @@
   height: 30rpx;
   margin-top: 7rpx;
 }
-.model-btn{
+
+.model-btn {
   width: 80%;
   margin: auto;
 }

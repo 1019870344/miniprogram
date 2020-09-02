@@ -44,8 +44,111 @@ Page({
     isShow:false,
     animation:'',
     // 商品数量
-    num:1
+    num:1,
+    sections:[
+      {
+        id:0,
+        kind:'颜色',
+        option:'白色'
+      },
+      {
+        id:1,
+        kind:'颜色',
+        option:'黑色'
+      },
+      {
+        id:2,
+        kind:'颜色',
+        option:'黑色'
+      },
+      {
+        id:3,
+        kind:'颜色',
+        option:'黑色'
+      },
+      {
+        id:4,
+        kind:'颜色',
+        option:'黑色'
+      },
+      {
+        id:5,
+        kind:'颜色',
+        option:'黑色'
+      },
+      {
+        id:6,
+        kind:'颜色',
+        option:'黑色'
+      },
+      {
+        id:7,
+        kind:'颜色',
+        option:'黑色'
+      },
+      {
+        id:8,
+        kind:'颜色',
+        option:'黑色'
+      }
+    ],
+    products:[
+      {
+        id: 0,
+        type: 'image',
+        url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+      },
+       {
+        id: 1,
+          type: 'image',
+          url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+      }, 
+      {
+        id: 2,
+        type: 'image',
+        url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
+      },
+       {
+        id: 3,
+        type: 'image',
+        url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
+      },
+       {
+        id: 4,
+        type: 'image',
+        url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
+      },
+       {
+        id: 5,
+        type: 'image',
+        url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
+      }, 
+      {
+        id: 6,
+        type: 'image',
+        url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
+      }
+    ],
+    ids:''
    
+  },
+  selectops:function(e){
+    var ids = e.currentTarget.dataset.id
+    this.setData({
+      ids:ids
+    })
+  },
+  // 跳转评论页
+  toRemarks:function(){
+    wx.navigateTo({
+      url: '/pages/remarks/remarks',
+    })
+  },
+  // 用户地址页
+  toAddress:function(){
+    wx.navigateTo({
+      url: '/pages/address/address',
+    })
   },
   // 打开弹出框
   showModel:function(){
@@ -97,7 +200,7 @@ Page({
   minus:function(){
     var num = this.data.num
     console.log(num)
-    if(num>0){
+    if(num>1){
       num--   
       this.setData({
         num:num

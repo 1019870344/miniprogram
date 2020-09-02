@@ -1,4 +1,7 @@
 /* components/searchBox.wxss */
+@import "../colorui/main.wxss";
+@import "../colorui/icon.wxss";
+
 /* 搜索框 */
 .searchbar {
   background-color: tomato;
@@ -16,23 +19,29 @@
   border-radius: 40rpx;
   height: 60%;
   position: relative;
-    top: 20rpx;
-    left: 10rpx;
+  top: 20rpx;
+  left: 10rpx;
 }
 
 .search-plac {
   font-size: 25rpx;
-    width: 50%;
-    position: absolute;
-    top: 5rpx;
-    height: 90%;
-    left: 54rpx;
+  width: 50%;
+  position: absolute;
+  top: 5rpx;
+  height: 90%;
+  left: 54rpx;
 }
 
 .searchbar-box .search-icon {
   position: relative;
-    width: 40rpx;
-    height: 40rpx;
-    top: 8rpx;
-    left: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+  top: 8rpx;
+  left: 10rpx;
+}
+
+.scan-icon {
+  float: right;
+  font-size: 35rpx;
+  padding-right: 15rpx;
 }
