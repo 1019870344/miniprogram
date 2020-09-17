@@ -1,2 +1,28 @@
 <!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<view class="container">
+	<!-- 未登录时显示 -->
+	<view wx:if="{{!isLogin}}">
+		<!-- 登录框，一般隐藏 -->
+		<view class="section login">
+			<view class="login-box">
+				<view class="login-w">登录后可同步账户购物车信息</view>
+				<button class="cu-btn round line-orange login-btn" style="width: 20%;">登录</button>
+			</view>
+		</view>
+		<!-- 主体,未登录情况 -->
+		<view class="section main-container">
+			<view class="main-m">
+				<image src="{{mainimg}}" class="main-img"></image>
+			</view>
+			<view style="text-align: center;margin-top: 30rpx;">登录后可同步账户信息</view>
+		</view>
+	</view>
+
+	<!-- 登陆时显示 -->
+<view wx:else="{{isLogin}}">
+	<!-- 主体，登录情况 -->
+	
+</view>
+
+
+</view>

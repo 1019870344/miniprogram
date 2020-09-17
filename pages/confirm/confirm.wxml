@@ -1,0 +1,55 @@
+<!--pages/confirm/confirm.wxml-->
+<view>
+  <!-- 主体部分 -->
+  <view>
+    <!-- 店铺号 -->
+    <view>
+      厦门智小金机场店001号
+    </view>
+    <!-- 商品信息 -->
+    <view>
+      <!-- 图片 -->
+      <view>
+        <image></image>
+      </view>
+      <!-- 商品名 -->
+      <view>
+        美式咖啡
+      </view>
+      <!-- 件数 -->
+      <view>
+        共计1件
+      </view>
+    </view>
+    <!-- 原价 -->
+    <view>
+      <!-- 原价 -->
+      <view>原价</view>
+      <!-- 价钱 -->
+      <view>￥45</view>
+    </view>
+    <!-- 活动价 -->
+    <view>
+      <!-- 活动价 -->
+      <view>活动价</view>
+      <!-- 价钱 -->
+      <view>￥45</view>
+    </view>
+  </view>
+  <!-- 体验券 -->
+  <view>
+    <!-- 体验券 -->
+    <view>体验券</view>
+    <!-- 选择情况 -->
+    <view>已选择一张</view>
+    <!-- 图标 -->
+    <view></view>
+  </view>
+  <!-- 提示 -->
+  <view>
+  </view>
+  <!-- 合计 -->
+  <view>
+  </view>
+
+</view>

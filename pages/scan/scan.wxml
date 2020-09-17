@@ -1,0 +1,16 @@
+<!--pages/scan/scan.wxml-->
+<view class="section container">
+	<view class="section imgbox">
+		<view class="img-circle">
+			<image src="{{userimg}}" class="img"></image>
+		</view>
+	</view>
+	<view class="section btn-box">
+		<view class="btn-w">
+			<button class="cu-btn bg-red margin-tb-sm lg" bindtap="checklogin" style="width:100%">点击登录</button>
+		</view>
+		<view class="btn-w">
+			<button class="cu-btn bg-white margin-tb-sm lg" style="width:100%">取消</button>
+		</view>
+	</view>
+</view> 

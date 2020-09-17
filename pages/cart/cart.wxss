@@ -1,1 +1,50 @@
 /* pages/cart/cart.wxss */
+
+.section {
+  width: 100%;
+}
+
+.login {
+  height: 100rpx;
+  border-radius: 0 0 50rpx 50rpx;
+  background-color: white;
+  font-size: 30rpx;
+}
+
+.login-box {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  font-size: 25rpx;
+
+}
+
+.login-w {
+  height: 100%;
+  width: 70%;
+  float: left;
+  text-align: center;
+  line-height: 100rpx;
+
+}
+.login-btn {
+  float: left;
+  margin-top: 20rpx;
+}
+
+/* 中间的 */
+.main-container{
+  height: 400rpx;
+}
+
+.main-m{
+  width: 200rpx;
+  height: 200rpx;
+  margin: auto;
+  margin-top: 150rpx;
+}
+.main-img{
+  width: 100%;
+  height: 100%;
+
+}

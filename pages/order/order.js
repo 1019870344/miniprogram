@@ -1,12 +1,11 @@
-// pages/cart/cart.js
+// pages/order/order.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    mainimg:'../../image/cart-img.png',
-    isLogin: true
+
   },
 
   /**
